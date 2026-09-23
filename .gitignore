@@ -20,3 +20,5 @@ Thumbs.db
 
 # Local logs
 *.log
+# GTFS raw data (large, re-downloadable)
+data/
