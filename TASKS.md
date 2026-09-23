@@ -6,9 +6,9 @@
 ## День 1 — основа + план
 - ✅ Окружение (Python, Git, Node, Java, VS Code)
 - ✅ Репозиторий, venv, .gitignore, первый commit
-- 🟡 TFW Light: GOAL / TASKS / TRACE / MEMORY
-- ⬜ Выбор города на Mobility Database (≥50 маршрутов), обоснование
-- ⬜ Скачать GTFS-фид, прогнать GTFS Validator, зафиксировать результат
+- ✅ TFW Light: GOAL / TASKS / TRACE / MEMORY
+- ✅ Выбор города на Mobility Database (≥50 маршрутов), обоснование
+- ✅Скачать GTFS-фид, прогнать GTFS Validator, зафиксировать результат
 
 ## День 2 — ядро MCP-сервера
 - ⬜ Загрузка и парсинг GTFS (agency, stops, routes, trips, stop_times,

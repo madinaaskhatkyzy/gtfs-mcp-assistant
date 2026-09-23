@@ -22,3 +22,5 @@ Thumbs.db
 *.log
 # GTFS raw data (large, re-downloadable)
 data/
+# GTFS Validator jar (large binary, downloaded separately)
+tools/
