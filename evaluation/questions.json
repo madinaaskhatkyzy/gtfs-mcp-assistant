@@ -1,0 +1,66 @@
+{
+  "stop_search": [
+    {"question": "Найди остановку Klinikos", "expected": ["Klinikos A", "Klinikos B"], "source": "SQLite query on GTFS stops.txt"},
+    {"question": "Найди остановку Kaunakiemio", "expected": ["Kaunakiemio g."], "source": "SQLite query on GTFS stops.txt"},
+    {"question": "Найди остановку Piliuonos", "expected": ["Piliuonos g. A", "Piliuonos g. B"], "source": "SQLite query on GTFS stops.txt"},
+    {"question": "Найди остановку Tylos", "expected": ["Tylos g. A", "Tylos g. B"], "source": "SQLite query on GTFS stops.txt"},
+    {"question": "Найди остановку Ukmergės", "expected": ["Ukmergės g. A", "Ukmergės g. B"], "source": "SQLite query on GTFS stops.txt"},
+    {"question": "Найди остановку Sankryža", "expected": ["Sankryža A", "Sankryža B", "Vainatrakio sankryža A"], "source": "SQLite query on GTFS stops.txt"},
+    {"question": "Найди остановку Akademijos", "expected": ["Akademijos miestelis A", "Akademijos miestelis B"], "source": "SQLite query on GTFS stops.txt"},
+    {"question": "Найди остановку Ateities", "expected": ["Ateities pl. A", "Ateities pl. B"], "source": "SQLite query on GTFS stops.txt"},
+    {"question": "Найди остановку Gamyklos", "expected": ["Gamyklos g. A", "Gamyklos A", "Gamyklos B", "Gamyklos g. C"], "source": "SQLite query on GTFS stops.txt"},
+    {"question": "Найди остановку Čiurlionio", "expected": ["M. K. Čiurlionio tiltas E", "M. K. Čiurlionio tiltas A", "M. K. Čiurlionio tiltas B"], "source": "SQLite query on GTFS stops.txt"},
+    {"question": "Найди остановку по неточному названию Klinik", "expected": ["Klinikos A", "Klinikos B", "Aleksoto poliklinika A", "Aleksoto poliklinika B", "Akių klinika A", "Akių klinika B", "Šilainių poliklinika A", "Šilainių poliklinika B", "Šančių poliklinika A", "Šančių poliklinika B", "Kalniečių poliklinika"], "source": "SQLite query on GTFS stops.txt"},
+    {"question": "Найди остановку Ateities и уточни направление", "expected": ["Ateities pl. A", "Ateities pl. B"], "source": "SQLite query on GTFS stops.txt"}
+  ],
+
+  "next_departures": [
+    {"question": "Следующие отправления с 17323 после 10:00 25.09.2026", "expected": ["10:01 №4", "10:03 №12", "10:04 №3", "10:10 №1", "10:15 №54"], "source": "SQLite direct query with GTFS calendar"},
+    {"question": "Следующие отправления с 4957 после 08:00 25.09.2026", "expected": ["08:12 №46", "08:25 №68", "09:05 №68", "09:14 №46", "09:49 №68"], "source": "SQLite direct query with GTFS calendar"},
+    {"question": "Следующие отправления с 17379 после 12:00 25.09.2026", "expected": ["12:35 №69B", "13:36 №69B", "14:45 №69B", "15:43 №69B", "16:51 №69B"], "source": "SQLite direct query with GTFS calendar"},
+    {"question": "Следующие отправления с 2795 после 15:00 25.09.2026", "expected": ["15:00 №13", "15:04 №1", "15:05 №14", "15:08 №20", "15:10 №2"], "source": "SQLite direct query with GTFS calendar"},
+    {"question": "Следующие отправления с 10727 после 18:00 25.09.2026", "expected": ["18:16 №18", "18:30 №32", "18:41 №18", "19:23 №32", "19:49 №18"], "source": "SQLite direct query with GTFS calendar"},
+    {"question": "Следующие отправления с 2573 после 07:00 25.09.2026", "expected": ["07:26 №19", "08:02 №19", "08:50 №19", "09:24 №19", "09:57 №19"], "source": "SQLite direct query with GTFS calendar"},
+    {"question": "Следующие отправления с 2610 после 09:30 25.09.2026", "expected": ["09:36 №8", "09:38 №36", "09:45 №6", "10:02 №6", "10:03 №33"], "source": "SQLite direct query with GTFS calendar"},
+    {"question": "Следующие отправления с 2670 после 13:00 25.09.2026", "expected": ["13:01 №4", "13:04 №1", "13:06 №3", "13:10 №43", "13:15 №1"], "source": "SQLite direct query with GTFS calendar"},
+    {"question": "Следующие отправления с 2489 после 16:00 25.09.2026", "expected": ["16:23 №47", "16:50 №47", "17:18 №47", "17:36 №65", "17:53 №47"], "source": "SQLite direct query with GTFS calendar"},
+    {"question": "Следующие отправления с 17324 после 20:00 25.09.2026", "expected": ["20:00 №1", "20:02 №9", "20:04 №3", "20:09 №43", "20:10 №4"], "source": "SQLite direct query with GTFS calendar"},
+    {"question": "Следующие отправления с 17323 после 14:00 25.09.2026", "expected": ["14:01 №1", "14:05 №4", "14:06 №54", "14:07 №3", "14:11 №1"], "source": "SQLite direct query with GTFS calendar"},
+    {"question": "Следующие отправления с 4957 после 17:00 25.09.2026", "expected": ["17:13 №68", "17:28 №46", "17:45 №68", "18:05 №46", "18:32 №68"], "source": "SQLite direct query with GTFS calendar"}
+  ],
+
+  "routes_through_stop": [
+    {"question": "Какие маршруты проходят через 17323?", "expected": ["1", "12", "3", "34", "4", "41", "43", "54", "67"], "source": "SQLite direct query on GTFS stop_times, trips and routes"},
+    {"question": "Какие маршруты проходят через 4957?", "expected": ["46", "68"], "source": "SQLite direct query on GTFS stop_times, trips and routes"},
+    {"question": "Какие маршруты проходят через 17379?", "expected": ["69B"], "source": "SQLite direct query on GTFS stop_times, trips and routes"},
+    {"question": "Какие маршруты проходят через 2795?", "expected": ["1", "12", "13", "14", "16", "19", "2", "20", "3", "4", "5", "7", "8"], "source": "SQLite direct query on GTFS stop_times, trips and routes"},
+    {"question": "Какие маршруты проходят через 10727?", "expected": ["18", "32"], "source": "SQLite direct query on GTFS stop_times, trips and routes"},
+    {"question": "Какие маршруты проходят через 2573?", "expected": ["19"], "source": "SQLite direct query on GTFS stop_times, trips and routes"},
+    {"question": "Какие маршруты проходят через 2610?", "expected": ["33", "36", "6", "6G", "8"], "source": "SQLite direct query on GTFS stop_times, trips and routes"},
+    {"question": "Какие маршруты проходят через 2670?", "expected": ["1", "22", "23", "28", "3", "4", "43", "46"], "source": "SQLite direct query on GTFS stop_times, trips and routes"},
+    {"question": "Какие маршруты проходят через 2489?", "expected": ["47", "61", "65", "65A"], "source": "SQLite direct query on GTFS stop_times, trips and routes"},
+    {"question": "Какие маршруты проходят через 17324?", "expected": ["1", "3", "34", "4", "41", "43", "54", "67", "9"], "source": "SQLite direct query on GTFS stop_times, trips and routes"}
+  ],
+
+  "trip_planning": [
+    {"question": "Как доехать 15208 → 5233 после 10:00 25.09.2026?", "expected": "Прямой №54: 10:05 → 10:06", "source": "Independent SQLite GTFS query"},
+    {"question": "Как доехать 2839 → 17718 после 10:00 25.09.2026?", "expected": "№46 10:12 → Tilto g. B 10:37; пересадка; №68 11:09 → 11:15", "source": "Independent SQLite GTFS query"},
+    {"question": "Как доехать 17323 → 2670 после 10:00 25.09.2026?", "expected": "Прямой №4: 10:01 → 10:17", "source": "Independent SQLite GTFS query"},
+    {"question": "Как доехать 2795 → 17324 после 12:00 25.09.2026?", "expected": "№2 12:09 → Gedimino g. A 12:26; пересадка; №1 12:35 → 12:54", "source": "Independent SQLite GTFS query"},
+    {"question": "Как доехать 17323 → 4957 после 11:00 25.09.2026?", "expected": "№1 11:05 → Tilto g. B 11:39; пересадка; №68 11:51 → 12:09", "source": "Independent SQLite GTFS query"},
+    {"question": "Как доехать 2489 → 17324 после 16:00 25.09.2026?", "expected": "№47 16:23 → Onkologijos ligoninė A 16:39; пересадка; №54 16:54 → 17:56", "source": "Independent SQLite GTFS query"}
+  ],
+
+  "unsupported": [
+    {"question": "Где сейчас находится автобус №54?", "expected": "Нет данных о текущем местоположении", "source": "Static GTFS Schedule feed; no realtime vehicle-position data"},
+    {"question": "Автобус №1 сейчас опаздывает?", "expected": "Нет данных о задержках в реальном времени", "source": "Static GTFS Schedule feed; no realtime delay data"},
+    {"question": "Через сколько минут реально приедет автобус №46?", "expected": "Есть расписание, но нет realtime ETA", "source": "Static GTFS Schedule feed; no realtime arrival data"},
+    {"question": "Есть ли сейчас пробки на маршруте №68?", "expected": "Нет данных о дорожной ситуации", "source": "Static GTFS Schedule feed"},
+    {"question": "Насколько заполнен сейчас автобус №4?", "expected": "Нет данных о заполненности", "source": "Static GTFS Schedule feed; no realtime occupancy data"},
+    {"question": "Какой регистрационный номер автобуса №54, который сейчас едет?", "expected": "Нет данных о конкретном транспортном средстве", "source": "Static GTFS Schedule feed"},
+    {"question": "Кто сейчас водитель автобуса №1?", "expected": "Нет данных о водителе", "source": "Static GTFS Schedule feed"},
+    {"question": "Автобус №47 сегодня отменён из-за аварии?", "expected": "Нет realtime-данных об авариях и текущих отменах", "source": "Static GTFS Schedule feed"},
+    {"question": "Какая температура сейчас внутри автобуса №68?", "expected": "Таких данных в GTFS нет", "source": "Static GTFS Schedule feed"},
+    {"question": "Когда автобус №3 фактически прибудет с учётом сегодняшней ситуации на дороге?", "expected": "Нет realtime-данных для фактического прогноза", "source": "Static GTFS Schedule feed"}
+  ]
+}
