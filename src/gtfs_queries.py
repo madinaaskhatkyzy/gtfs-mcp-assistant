@@ -348,3 +348,227 @@ def get_fare_info(db_path: str, route_short_name: str) -> dict:
         }
     finally:
         conn.close()
+# ---------------------------------------------------------------------
+# Инструмент 5: маршрут A -> B (пока только прямой вариант)
+# ---------------------------------------------------------------------
+
+def plan_direct_trip(
+    db_path: str,
+    from_stop_id: str,
+    to_stop_id: str,
+    target_datetime: datetime | None = None,
+    limit: int = 5,
+) -> list[dict]:
+    """Ищет прямые поездки от from_stop_id до to_stop_id.
+
+    Условия:
+    - один и тот же trip должен проходить через обе остановки;
+    - A должна идти раньше B по stop_sequence;
+    - trip должен работать в выбранную дату;
+    - отправление из A должно быть не раньше target_datetime.
+    """
+
+    if target_datetime is None:
+        target_datetime = datetime.now()
+
+    conn = _connect(db_path)
+
+    try:
+        active_services = _active_service_ids(conn, target_datetime.date())
+
+        if not active_services:
+            return []
+
+        placeholders = ", ".join("?" for _ in active_services)
+
+        sql = f"""
+            SELECT
+                r.route_short_name,
+                t.trip_id,
+                t.trip_headsign,
+                a.departure_time AS departure_time,
+                b.arrival_time AS arrival_time,
+                a.stop_sequence AS from_sequence,
+                b.stop_sequence AS to_sequence
+            FROM stop_times a
+            JOIN stop_times b
+                ON a.trip_id = b.trip_id
+            JOIN trips t
+                ON t.trip_id = a.trip_id
+            JOIN routes r
+                ON r.route_id = t.route_id
+            WHERE a.stop_id = ?
+              AND b.stop_id = ?
+              AND CAST(a.stop_sequence AS INTEGER)
+                  < CAST(b.stop_sequence AS INTEGER)
+              AND t.service_id IN ({placeholders})
+        """
+
+        params = [from_stop_id, to_stop_id, *active_services]
+        rows = conn.execute(sql, params).fetchall()
+
+        target_seconds = (
+            target_datetime.hour * 3600
+            + target_datetime.minute * 60
+            + target_datetime.second
+        )
+
+        results = []
+
+        for row in rows:
+            try:
+                departure_seconds = _gtfs_time_to_seconds(
+                    row["departure_time"]
+                )
+                arrival_seconds = _gtfs_time_to_seconds(
+                    row["arrival_time"]
+                )
+            except (ValueError, TypeError, AttributeError):
+                continue
+
+            if departure_seconds < target_seconds:
+                continue
+
+            results.append(
+                {
+                    "type": "direct",
+                    "route_short_name": row["route_short_name"],
+                    "trip_headsign": row["trip_headsign"],
+                    "from_stop_id": from_stop_id,
+                    "to_stop_id": to_stop_id,
+                    "departure_time": _seconds_to_hhmm(
+                        departure_seconds
+                    ),
+                    "arrival_time": _seconds_to_hhmm(
+                        arrival_seconds
+                    ),
+                    "_sort_key": departure_seconds,
+                }
+            )
+
+        results.sort(key=lambda item: item["_sort_key"])
+
+        for item in results:
+            del item["_sort_key"]
+
+        return results[:limit]
+
+    finally:
+        conn.close()
+
+        # ---------------------------------------------------------------------
+# Маршрут A -> B с одной пересадкой
+# ---------------------------------------------------------------------
+
+def plan_one_transfer_trip(
+    db_path: str,
+    from_stop_id: str,
+    to_stop_id: str,
+    target_datetime: datetime | None = None,
+    limit: int = 5,
+    min_transfer_minutes: int = 3,
+) -> list[dict]:
+    """Ищет маршрут A -> C -> B с одной пересадкой."""
+
+    if target_datetime is None:
+        target_datetime = datetime.now()
+
+    conn = _connect(db_path)
+    try:
+        services = _active_service_ids(conn, target_datetime.date())
+        if not services:
+            return []
+
+        service_marks = ", ".join("?" for _ in services)
+
+        sql = f"""
+            SELECT
+                r1.route_short_name AS route1,
+                t1.trip_headsign AS headsign1,
+                a.departure_time AS departure1,
+                c1.arrival_time AS arrival1,
+                c1.stop_id AS transfer_stop_id,
+                s.stop_name AS transfer_stop_name,
+                r2.route_short_name AS route2,
+                t2.trip_headsign AS headsign2,
+                c2.departure_time AS departure2,
+                b.arrival_time AS arrival2
+            FROM stop_times a
+            JOIN stop_times c1 ON a.trip_id = c1.trip_id
+            JOIN trips t1 ON t1.trip_id = a.trip_id
+            JOIN routes r1 ON r1.route_id = t1.route_id
+
+            JOIN stop_times c2 ON c2.stop_id = c1.stop_id
+            JOIN stop_times b ON b.trip_id = c2.trip_id
+            JOIN trips t2 ON t2.trip_id = c2.trip_id
+            JOIN routes r2 ON r2.route_id = t2.route_id
+            JOIN stops s ON s.stop_id = c1.stop_id
+
+            WHERE a.stop_id = ?
+              AND b.stop_id = ?
+              AND a.trip_id != c2.trip_id
+              AND CAST(a.stop_sequence AS INTEGER)
+                  < CAST(c1.stop_sequence AS INTEGER)
+              AND CAST(c2.stop_sequence AS INTEGER)
+                  < CAST(b.stop_sequence AS INTEGER)
+              AND t1.service_id IN ({service_marks})
+              AND t2.service_id IN ({service_marks})
+        """
+
+        rows = conn.execute(
+            sql,
+            [from_stop_id, to_stop_id, *services, *services],
+        ).fetchall()
+
+        target_sec = (
+            target_datetime.hour * 3600
+            + target_datetime.minute * 60
+            + target_datetime.second
+        )
+
+        results = []
+
+        for row in rows:
+            dep1 = _gtfs_time_to_seconds(row["departure1"])
+            arr1 = _gtfs_time_to_seconds(row["arrival1"])
+            dep2 = _gtfs_time_to_seconds(row["departure2"])
+            arr2 = _gtfs_time_to_seconds(row["arrival2"])
+
+            if dep1 < target_sec:
+                continue
+
+            if dep2 < arr1 + min_transfer_minutes * 60:
+                continue
+
+            results.append({
+                "type": "one_transfer",
+                "transfer_stop_id": row["transfer_stop_id"],
+                "transfer_stop_name": row["transfer_stop_name"],
+                "first_leg": {
+                    "route_short_name": row["route1"],
+                    "trip_headsign": row["headsign1"],
+                    "from_stop_id": from_stop_id,
+                    "to_stop_id": row["transfer_stop_id"],
+                    "departure_time": _seconds_to_hhmm(dep1),
+                    "arrival_time": _seconds_to_hhmm(arr1),
+                },
+                "second_leg": {
+                    "route_short_name": row["route2"],
+                    "trip_headsign": row["headsign2"],
+                    "from_stop_id": row["transfer_stop_id"],
+                    "to_stop_id": to_stop_id,
+                    "departure_time": _seconds_to_hhmm(dep2),
+                    "arrival_time": _seconds_to_hhmm(arr2),
+                },
+                "_arrival": arr2,
+            })
+
+        results.sort(key=lambda x: x["_arrival"])
+
+        for result in results[:limit]:
+            del result["_arrival"]
+
+        return results[:limit]
+
+    finally:
+        conn.close()
