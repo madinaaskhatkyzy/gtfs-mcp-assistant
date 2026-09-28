@@ -34,6 +34,29 @@ DB_PATH = os.environ.get("GTFS_DB_PATH", DEFAULT_DB_PATH)
 mcp = MCPServer("gtfs-assistant")
 
 
+def _parse_target_datetime(date: str | None, time: str | None) -> datetime:
+    """Общий разбор (date, time) в datetime — используется и в
+    get_next_departures, и в plan_trip.
+
+    НАЙДЕННЫЙ И ИСПРАВЛЕННЫЙ БАГ (25.09.2026, см. TRACE.md): раньше
+    случай "передано только time, без date" не был обработан отдельной
+    веткой и проваливался в "иначе — datetime.now()", то есть заданное
+    пользователем время ТИХО ИГНОРИРОВАЛОСЬ и подставлялось настоящее
+    текущее время сервера. Обнаружено вручную через Telegram-бота:
+    вопрос "а после него?" со временем 16:27 неожиданно показал рейсы
+    в районе 19:19 — оказалось, это было реальное текущее время
+    компьютера (Алматы, UTC+5), а не 16:27 по Каунасу.
+    """
+    if date and time:
+        return datetime.strptime(f"{date} {time}", "%Y-%m-%d %H:%M")
+    if date:
+        return datetime.strptime(date, "%Y-%m-%d")
+    if time:
+        today = datetime.now().date()
+        return datetime.combine(today, datetime.strptime(time, "%H:%M").time())
+    return datetime.now()
+
+
 # ---------------------------------------------------------------------
 # Инструмент 1: поиск остановки
 # ---------------------------------------------------------------------
@@ -88,19 +111,7 @@ def get_next_departures(
     Если список пуст — значит на этот день/время рейсов по данным нет;
     так и скажи пользователю, не придумывай время.
     """
-
-    if date and time:
-        target = datetime.strptime(
-            f"{date} {time}",
-            "%Y-%m-%d %H:%M",
-        )
-    elif date:
-        target = datetime.strptime(
-            date,
-            "%Y-%m-%d",
-        )
-    else:
-        target = datetime.now()
+    target = _parse_target_datetime(date, time)
 
     return next_departures(
         DB_PATH,
@@ -192,19 +203,7 @@ def plan_trip(
 
     Если подходящего варианта нет — возвращает пустой список.
     """
-
-    if date and time:
-        target = datetime.strptime(
-            f"{date} {time}",
-            "%Y-%m-%d %H:%M",
-        )
-    elif date:
-        target = datetime.strptime(
-            date,
-            "%Y-%m-%d",
-        )
-    else:
-        target = datetime.now()
+    target = _parse_target_datetime(date, time)
 
     # Сначала пытаемся найти прямой маршрут.
     direct = plan_direct_trip(

@@ -1,0 +1,929 @@
+[
+  {
+    "category": "stop_search",
+    "question": "Найди остановку Klinikos",
+    "expected": [
+      "Klinikos A",
+      "Klinikos B"
+    ],
+    "answer": "Я нашла несколько остановок с названием «Klinikos». Какую именно вы имели в виду?\n\n*   Klinikos A\n*   Klinikos B",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "find_stop",
+        "args": {
+          "query": "Klinikos"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 2 ожидаемых названий найдены в ответе"
+  },
+  {
+    "category": "stop_search",
+    "question": "Найди остановку Kaunakiemio",
+    "expected": [
+      "Kaunakiemio g."
+    ],
+    "answer": "Остановка «Kaunakiemio g.» найдена (ID 2670). Чем я могу вам помочь?",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "find_stop",
+        "args": {
+          "query": "Kaunakiemio"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 1 ожидаемых названий найдены в ответе"
+  },
+  {
+    "category": "stop_search",
+    "question": "Найди остановку Piliuonos",
+    "expected": [
+      "Piliuonos g. A",
+      "Piliuonos g. B"
+    ],
+    "answer": "Найдено несколько остановок с таким названием. Уточните, пожалуйста, какая вас интересует:\n* Piliuonos g. A\n* Piliuonos g. B",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "find_stop",
+        "args": {
+          "query": "Piliuonos"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 2 ожидаемых названий найдены в ответе"
+  },
+  {
+    "category": "stop_search",
+    "question": "Найди остановку Tylos",
+    "expected": [
+      "Tylos g. A",
+      "Tylos g. B"
+    ],
+    "answer": "Найдено две остановки с названием «Tylos»:\n\n* Tylos g. A (stop_id: 14686)\n* Tylos g. B (stop_id: 17379)\n\nКакую из них вы имели в виду?",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "find_stop",
+        "args": {
+          "query": "Tylos"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 2 ожидаемых названий найдены в ответе"
+  },
+  {
+    "category": "stop_search",
+    "question": "Найди остановку Ukmergės",
+    "expected": [
+      "Ukmergės g. A",
+      "Ukmergės g. B"
+    ],
+    "answer": "Найдено несколько остановок по запросу «Ukmergės»:\n\n*   **Ukmergės g. A** (ID: 2795)\n*   **Ukmergės g. B** (ID: 2794)\n\nУточните, пожалуйста, какая из них вас интересует?",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "find_stop",
+        "args": {
+          "query": "Ukmergės"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 2 ожидаемых названий найдены в ответе"
+  },
+  {
+    "category": "stop_search",
+    "question": "Найди остановку Sankryža",
+    "expected": [
+      "Sankryža A",
+      "Sankryža B",
+      "Vainatrakio sankryža A"
+    ],
+    "answer": "Найдено несколько остановок с названием «Sankryža». Уточните, пожалуйста, какая именно вас интересует:\n\n*   **Sankryža A** (stop_id: 16934)\n*   **Sankryža B** (stop_id: 16933)\n*   **Vainatrakio sankryža A** (stop_id: 15820)",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "find_stop",
+        "args": {
+          "query": "Sankryža"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 3 ожидаемых названий найдены в ответе"
+  },
+  {
+    "category": "stop_search",
+    "question": "Найди остановку Akademijos",
+    "expected": [
+      "Akademijos miestelis A",
+      "Akademijos miestelis B"
+    ],
+    "answer": "Найдено две остановки с похожим названием:\n\n* **Akademijos miestelis B** (stop_id: 14553)\n* **Akademijos miestelis A** (stop_id: 10727)\n\nКакую из них вы имели в виду?",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "find_stop",
+        "args": {
+          "query": "Akademijos"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 2 ожидаемых названий найдены в ответе"
+  },
+  {
+    "category": "stop_search",
+    "question": "Найди остановку Ateities",
+    "expected": [
+      "Ateities pl. A",
+      "Ateities pl. B"
+    ],
+    "answer": "Я нашла несколько остановок с названием «Ateities»:\n\n*   Ateities pl. A (ID: 2572)\n*   Ateities pl. B (ID: 2573)\n\nУточните, пожалуйста, какая из них вас интересует?",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "find_stop",
+        "args": {
+          "query": "Ateities"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 2 ожидаемых названий найдены в ответе"
+  },
+  {
+    "category": "stop_search",
+    "question": "Найди остановку Gamyklos",
+    "expected": [
+      "Gamyklos g. A",
+      "Gamyklos A",
+      "Gamyklos B",
+      "Gamyklos g. C"
+    ],
+    "answer": null,
+    "api_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-3.1-flash-lite\\nPlease retry in 24.230558347s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-flash-lite'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '24s'}]}}",
+    "tool_calls": [],
+    "verdict": "error",
+    "reason": "агент не дал ответа (ошибка API или превышен лимит шагов)"
+  },
+  {
+    "category": "stop_search",
+    "question": "Найди остановку Čiurlionio",
+    "expected": [
+      "M. K. Čiurlionio tiltas E",
+      "M. K. Čiurlionio tiltas A",
+      "M. K. Čiurlionio tiltas B"
+    ],
+    "answer": null,
+    "api_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-3.1-flash-lite\\nPlease retry in 22.031668933s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-flash-lite'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '22s'}]}}",
+    "tool_calls": [],
+    "verdict": "error",
+    "reason": "агент не дал ответа (ошибка API или превышен лимит шагов)"
+  },
+  {
+    "category": "stop_search",
+    "question": "Найди остановку по неточному названию Klinik",
+    "expected": [
+      "Klinikos A",
+      "Klinikos B",
+      "Aleksoto poliklinika A",
+      "Aleksoto poliklinika B",
+      "Akių klinika A",
+      "Akių klinika B",
+      "Šilainių poliklinika A",
+      "Šilainių poliklinika B",
+      "Šančių poliklinika A",
+      "Šančių poliklinika B",
+      "Kalniečių poliklinika"
+    ],
+    "answer": "По вашему запросу найдено несколько остановок. Уточните, пожалуйста, какую именно вы имели в виду:\n\n*   **Klinikos A** (ID: 17323)\n*   **Klinikos B** (ID: 17324)\n*   **Akių klinika A** (ID: 2802)\n*   **Akių klinika B** (ID: 2801)\n*   **Šančių poliklinika A** (ID: 2674)",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "find_stop",
+        "args": {
+          "query": "Klinik"
+        }
+      }
+    ],
+    "verdict": "partial",
+    "reason": "найдено 5/11: ['Klinikos A', 'Klinikos B', 'Akių klinika A', 'Akių klinika B', 'Šančių poliklinika A']"
+  },
+  {
+    "category": "stop_search",
+    "question": "Найди остановку Ateities и уточни направление",
+    "expected": [
+      "Ateities pl. A",
+      "Ateities pl. B"
+    ],
+    "answer": "Я нашел две остановки с похожим названием:\n\n* **Ateities pl. A** (stop_id: 2572)\n* **Ateities pl. B** (stop_id: 2573)\n\nУточните, пожалуйста, какая из них вас интересует? Также, чтобы узнать направления движения (маршруты), проходящие через остановку, я могу посмотреть их после того, как вы выберете нужную.",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "find_stop",
+        "args": {
+          "query": "Ateities"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 2 ожидаемых названий найдены в ответе"
+  },
+  {
+    "category": "next_departures",
+    "question": "Следующие отправления с 17323 после 10:00 25.09.2026",
+    "expected": [
+      "10:01 №4",
+      "10:03 №12",
+      "10:04 №3",
+      "10:10 №1",
+      "10:15 №54"
+    ],
+    "answer": "Ближайшие отправления с остановки 17323 после 10:00 25.09.2026:\n\n*   **Маршрут 4** (направление Vaidoto g.): 10:01\n*   **Маршрут 12** (направление Petrašiūnai-Klinikos-Petrašiūnai): 10:03\n*   **Маршрут 3** (направление Kauno ligoninė (Šilainiai)): 10:04\n*   **Маршрут 1** (направление Vaidoto g.): 10:10\n*   **Маршрут 54** (направление Onkologijos ligoninė): 10:15",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "get_next_departures",
+        "args": {
+          "time": "10:00",
+          "stop_id": "17323",
+          "date": "2026-09-25"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 5 пар время+маршрут найдены"
+  },
+  {
+    "category": "next_departures",
+    "question": "Следующие отправления с 4957 после 08:00 25.09.2026",
+    "expected": [
+      "08:12 №46",
+      "08:25 №68",
+      "09:05 №68",
+      "09:14 №46",
+      "09:49 №68"
+    ],
+    "answer": "Вот ближайшие отправления с остановки 4957 после 08:00 25 сентября 2026 года:\n\n*   **Маршрут 46** до Šlienava: 08:12\n*   **Маршрут 68** до Vaišvydava: 08:25\n*   **Маршрут 68** до Vaišvydava: 09:05\n*   **Маршрут 46** до Žiegždriai: 09:14\n*   **Маршрут 68** до Vaišvydava: 09:49",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "get_next_departures",
+        "args": {
+          "time": "08:00",
+          "date": "2026-09-25",
+          "stop_id": "4957"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 5 пар время+маршрут найдены"
+  },
+  {
+    "category": "next_departures",
+    "question": "Следующие отправления с 17379 после 12:00 25.09.2026",
+    "expected": [
+      "12:35 №69B",
+      "13:36 №69B",
+      "14:45 №69B",
+      "15:43 №69B",
+      "16:51 №69B"
+    ],
+    "answer": "Ближайшие отправления с остановки 17379 после 12:00 25.09.2026:\n\n*   **Маршрут 69B** (направление: Karmėlavos kapinės):\n    *   12:35\n    *   13:36\n    *   14:45\n    *   15:43\n    *   16:51",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "get_next_departures",
+        "args": {
+          "time": "12:00",
+          "date": "2026-09-25",
+          "stop_id": "17379"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 5 пар время+маршрут найдены"
+  },
+  {
+    "category": "next_departures",
+    "question": "Следующие отправления с 2795 после 15:00 25.09.2026",
+    "expected": [
+      "15:00 №13",
+      "15:04 №1",
+      "15:05 №14",
+      "15:08 №20",
+      "15:10 №2"
+    ],
+    "answer": "Вот ближайшие отправления с остановки 2795 после 15:00 25 сентября 2026 года:\n\n*   **Маршрут 13** (направление: islandijos pl.) — 15:00\n*   **Маршрут 1** (направление: Vaidoto g.) — 15:04\n*   **Маршрут 14** (направление: Islandijos pl.-Centras-Islandijos pl.) — 15:05\n*   **Маршрут 20** (направление: 2-asis fortas) — 15:08\n*   **Маршрут 2** (направление: Kauno pilis) — 15:10",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "get_next_departures",
+        "args": {
+          "date": "2026-09-25",
+          "time": "15:00",
+          "stop_id": "2795"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 5 пар время+маршрут найдены"
+  },
+  {
+    "category": "next_departures",
+    "question": "Следующие отправления с 10727 после 18:00 25.09.2026",
+    "expected": [
+      "18:16 №18",
+      "18:30 №32",
+      "18:41 №18",
+      "19:23 №32",
+      "19:49 №18"
+    ],
+    "answer": "Ближайшие отправления с остановки 10727 после 18:00 25 сентября 2026 года:\n\n*   **18:16** — маршрут **18** до Geležinkelio stotis\n*   **18:30** — маршрут **32** до Geležinkelio stotis\n*   **18:41** — маршрут **18** до Geležinkelio stotis\n*   **19:23** — маршрут **32** до Geležinkelio stotis\n*   **19:49** — маршрут **18** до Geležinkelio stotis",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "get_next_departures",
+        "args": {
+          "time": "18:00",
+          "date": "2026-09-25",
+          "stop_id": "10727"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 5 пар время+маршрут найдены"
+  },
+  {
+    "category": "next_departures",
+    "question": "Следующие отправления с 2573 после 07:00 25.09.2026",
+    "expected": [
+      "07:26 №19",
+      "08:02 №19",
+      "08:50 №19",
+      "09:24 №19",
+      "09:57 №19"
+    ],
+    "answer": "Вот ближайшие отправления с остановки 2573 после 07:00 25 сентября 2026 года:\n\n* **Маршрут 19** (в сторону Palemono keramika): 07:26\n* **Маршрут 19** (в сторону Palemono keramika): 08:02\n* **Маршрут 19** (в сторону Palemono keramika): 08:50\n* **Маршрут 19** (в сторону Palemono keramika): 09:24\n* **Маршрут 19** (в сторону Palemono keramika): 09:57",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "get_next_departures",
+        "args": {
+          "date": "2026-09-25",
+          "time": "07:00",
+          "stop_id": "2573"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 5 пар время+маршрут найдены"
+  },
+  {
+    "category": "next_departures",
+    "question": "Следующие отправления с 2610 после 09:30 25.09.2026",
+    "expected": [
+      "09:36 №8",
+      "09:38 №36",
+      "09:45 №6",
+      "10:02 №6",
+      "10:03 №33"
+    ],
+    "answer": null,
+    "api_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-3.1-flash-lite\\nPlease retry in 26.601376667s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-flash-lite'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '26s'}]}}",
+    "tool_calls": [],
+    "verdict": "error",
+    "reason": "агент не дал ответа (ошибка API или превышен лимит шагов)"
+  },
+  {
+    "category": "next_departures",
+    "question": "Следующие отправления с 2670 после 13:00 25.09.2026",
+    "expected": [
+      "13:01 №4",
+      "13:04 №1",
+      "13:06 №3",
+      "13:10 №43",
+      "13:15 №1"
+    ],
+    "answer": null,
+    "api_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-3.1-flash-lite\\nPlease retry in 24.394330483s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-flash-lite'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '24s'}]}}",
+    "tool_calls": [],
+    "verdict": "error",
+    "reason": "агент не дал ответа (ошибка API или превышен лимит шагов)"
+  },
+  {
+    "category": "next_departures",
+    "question": "Следующие отправления с 2489 после 16:00 25.09.2026",
+    "expected": [
+      "16:23 №47",
+      "16:50 №47",
+      "17:18 №47",
+      "17:36 №65",
+      "17:53 №47"
+    ],
+    "answer": null,
+    "api_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-3.1-flash-lite\\nPlease retry in 22.189838995s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-flash-lite'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '22s'}]}}",
+    "tool_calls": [],
+    "verdict": "error",
+    "reason": "агент не дал ответа (ошибка API или превышен лимит шагов)"
+  },
+  {
+    "category": "next_departures",
+    "question": "Следующие отправления с 17324 после 20:00 25.09.2026",
+    "expected": [
+      "20:00 №1",
+      "20:02 №9",
+      "20:04 №3",
+      "20:09 №43",
+      "20:10 №4"
+    ],
+    "answer": "Вот ближайшие отправления с остановки 17324 после 20:00 25 сентября 2026 года:\n\n*   **Маршрут 1** (на Islandijos pl.): 20:00\n*   **Маршрут 9** (на Petrašiūnai-Klinikos-Petrašiūnai): 20:02\n*   **Маршрут 3** (на Onkologijos ligoninė): 20:04\n*   **Маршрут 43** (на Kauno pienas): 20:09\n*   **Маршрут 34** (на Kauno ligoninė (Šilainiai)): 20:10",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "get_next_departures",
+        "args": {
+          "date": "2026-09-25",
+          "time": "20:00",
+          "stop_id": "17324"
+        }
+      }
+    ],
+    "verdict": "partial",
+    "reason": "найдено 4/5 пар время+маршрут"
+  },
+  {
+    "category": "next_departures",
+    "question": "Следующие отправления с 17323 после 14:00 25.09.2026",
+    "expected": [
+      "14:01 №1",
+      "14:05 №4",
+      "14:06 №54",
+      "14:07 №3",
+      "14:11 №1"
+    ],
+    "answer": "Вот ближайшие отправления с остановки 17323 после 14:00 25.09.2026:\n\n*   **Маршрут 1** (направление Vaidoto g.): 14:01\n*   **Маршрут 4** (направление Vaidoto g.): 14:05\n*   **Маршрут 54** (направление Onkologijos ligoninė): 14:06\n*   **Маршрут 3** (направление Kauno ligoninė (Šilainiai)): 14:07\n*   **Маршрут 41** (направление Chemijos g.): 14:11",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "get_next_departures",
+        "args": {
+          "time": "14:00",
+          "date": "2026-09-25",
+          "stop_id": "17323"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 5 пар время+маршрут найдены"
+  },
+  {
+    "category": "next_departures",
+    "question": "Следующие отправления с 4957 после 17:00 25.09.2026",
+    "expected": [
+      "17:13 №68",
+      "17:28 №46",
+      "17:45 №68",
+      "18:05 №46",
+      "18:32 №68"
+    ],
+    "answer": "На 25 сентября 2026 года после 17:00 с остановки 4957 запланированы следующие отправления:\n\n*   **17:13** — маршрут **68** (направление: Vaišvydava)\n*   **17:28** — маршрут **46** (направление: Šlienava)\n*   **17:45** — маршрут **68** (направление: Vaišvydava)\n*   **18:05** — маршрут **46** (направление: Žiegždriai)\n*   **18:32** — маршрут **68** (направление: Vaišvydava)",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "get_next_departures",
+        "args": {
+          "time": "17:00",
+          "stop_id": "4957",
+          "date": "2026-09-25"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 5 пар время+маршрут найдены"
+  },
+  {
+    "category": "routes_through_stop",
+    "question": "Какие маршруты проходят через 17323?",
+    "expected": [
+      "1",
+      "12",
+      "3",
+      "34",
+      "4",
+      "41",
+      "43",
+      "54",
+      "67"
+    ],
+    "answer": null,
+    "api_error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+    "tool_calls": [],
+    "verdict": "error",
+    "reason": "агент не дал ответа (ошибка API или превышен лимит шагов)"
+  },
+  {
+    "category": "routes_through_stop",
+    "question": "Какие маршруты проходят через 4957?",
+    "expected": [
+      "46",
+      "68"
+    ],
+    "answer": "Через остановку с ID 4957 проходят следующие маршруты:\n\n*   **Маршрут 46:**\n    *   В сторону Girionys: первый рейс в 07:58, последний в 20:44.\n    *   В сторону Užvingių g.: рейс в 22:58.\n    *   В сторону Šlienava: первый рейс в 08:12, последний в 20:45.\n    *   В сторону Žiegždriai: первый рейс в 05:56, последний в 22:04.\n\n*   **Маршрут 68:**\n    *   В сторону Vaišvydava: первый рейс в 05:16, последний в 21:17.",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "get_routes_through_stop",
+        "args": {
+          "stop_id": "4957"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 2 маршрутов найдены"
+  },
+  {
+    "category": "routes_through_stop",
+    "question": "Какие маршруты проходят через 17379?",
+    "expected": [
+      "69B"
+    ],
+    "answer": "Через остановку 17379 проходит следующий маршрут:\n\n*   **Маршрут 69B** (направление: Karmėlavos kapinės):\n    *   Первый рейс: 07:07\n    *   Последний рейс: 19:51",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "get_routes_through_stop",
+        "args": {
+          "stop_id": "17379"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 1 маршрутов найдены"
+  },
+  {
+    "category": "routes_through_stop",
+    "question": "Какие маршруты проходят через 2795?",
+    "expected": [
+      "1",
+      "12",
+      "13",
+      "14",
+      "16",
+      "19",
+      "2",
+      "20",
+      "3",
+      "4",
+      "5",
+      "7",
+      "8"
+    ],
+    "answer": "Через остановку с идентификатором 2795 проходят следующие маршруты:\n\n*   **Маршрут 1:** до Vaidoto g. (04:34 – 22:31)\n*   **Маршрут 2:** до Kauno pilis (05:10 – 22:26)\n*   **Маршрут 3:** до Kauno ligoninė (Šilainiai) (05:58 – 22:40)\n*   **Маршрут 4:** до Vaidoto g. (04:17 – 22:07)\n*   **Маршрут 5:** до Kėdainių g. (04:26 – 05:49)\n*   **Маршрут 7:** до Kaniūkai (04:17 – 06:38)\n*   **Маршрут 8:** до Draugystės g. (05:17)\n*   **Маршрут 12:** до Islandijos pl. (22:21 – 22:42), до Petrašiūnai (05:25 – 06:00) и по кольцевому маршруту Petrašiūnai-Klinikos-Petrašiūnai (05:40 – 22:01)\n*   **Маршрут 13:** по кольцевому маршруту Islandijos pl.-Centras-Islandijos pl. (05:09 – 06:12) и до Islandijos pl. (05:28 – 23:39)\n*   **Маршрут 14:** по кольцевому маршруту Islandijos pl.-Centras-Islandijos pl. (05:15 – 23:33)\n*   **Маршрут 16:** до Partizanų g. (04:47 – 05:01)\n*   **Маршрут 19:** до Skubios pagalbos centras (05:59 – 22:42)\n*   **Маршрут 20:** до 2-asis fortas (05:29 – 22:08)",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "get_routes_through_stop",
+        "args": {
+          "stop_id": "2795"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 13 маршрутов найдены"
+  },
+  {
+    "category": "routes_through_stop",
+    "question": "Какие маршруты проходят через 10727?",
+    "expected": [
+      "18",
+      "32"
+    ],
+    "answer": "Через остановку с ID 10727 проходят следующие маршруты:\n\n*   **Маршрут 18** (в направлении Geležinkelio stotis): первый рейс в 06:59, последний в 21:33.\n*   **Маршрут 32** (в направлении Geležinkelio stotis): первый рейс в 05:15, последний в 21:56.",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "get_routes_through_stop",
+        "args": {
+          "stop_id": "10727"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 2 маршрутов найдены"
+  },
+  {
+    "category": "routes_through_stop",
+    "question": "Какие маршруты проходят через 2573?",
+    "expected": [
+      "19"
+    ],
+    "answer": null,
+    "api_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-3.1-flash-lite\\nPlease retry in 28.080993439s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-flash-lite'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '28s'}]}}",
+    "tool_calls": [
+      {
+        "tool": "get_routes_through_stop",
+        "args": {
+          "stop_id": "2573"
+        }
+      }
+    ],
+    "verdict": "error",
+    "reason": "агент не дал ответа (ошибка API или превышен лимит шагов)"
+  },
+  {
+    "category": "routes_through_stop",
+    "question": "Какие маршруты проходят через 2610?",
+    "expected": [
+      "33",
+      "36",
+      "6",
+      "6G",
+      "8"
+    ],
+    "answer": null,
+    "api_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-3.1-flash-lite\\nPlease retry in 25.880748594s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-flash-lite'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '25s'}]}}",
+    "tool_calls": [],
+    "verdict": "error",
+    "reason": "агент не дал ответа (ошибка API или превышен лимит шагов)"
+  },
+  {
+    "category": "routes_through_stop",
+    "question": "Какие маршруты проходят через 2670?",
+    "expected": [
+      "1",
+      "22",
+      "23",
+      "28",
+      "3",
+      "4",
+      "43",
+      "46"
+    ],
+    "answer": null,
+    "api_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-3.1-flash-lite\\nPlease retry in 23.698187477s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-flash-lite'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '23s'}]}}",
+    "tool_calls": [],
+    "verdict": "error",
+    "reason": "агент не дал ответа (ошибка API или превышен лимит шагов)"
+  },
+  {
+    "category": "routes_through_stop",
+    "question": "Какие маршруты проходят через 2489?",
+    "expected": [
+      "47",
+      "61",
+      "65",
+      "65A"
+    ],
+    "answer": null,
+    "api_error": "429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 15, model: gemini-3.1-flash-lite\\nPlease retry in 21.513744942s.', 'status': 'RESOURCE_EXHAUSTED', 'details': [{'@type': 'type.googleapis.com/google.rpc.Help', 'links': [{'description': 'Learn more about Gemini API quotas', 'url': 'https://ai.google.dev/gemini-api/docs/rate-limits'}]}, {'@type': 'type.googleapis.com/google.rpc.QuotaFailure', 'violations': [{'quotaMetric': 'generativelanguage.googleapis.com/generate_content_free_tier_requests', 'quotaId': 'GenerateRequestsPerMinutePerProjectPerModel-FreeTier', 'quotaDimensions': {'location': 'global', 'model': 'gemini-3.1-flash-lite'}, 'quotaValue': '15'}]}, {'@type': 'type.googleapis.com/google.rpc.RetryInfo', 'retryDelay': '21s'}]}}",
+    "tool_calls": [],
+    "verdict": "error",
+    "reason": "агент не дал ответа (ошибка API или превышен лимит шагов)"
+  },
+  {
+    "category": "routes_through_stop",
+    "question": "Какие маршруты проходят через 17324?",
+    "expected": [
+      "1",
+      "3",
+      "34",
+      "4",
+      "41",
+      "43",
+      "54",
+      "67",
+      "9"
+    ],
+    "answer": "Через остановку 17324 проходят следующие маршруты:\n\n*   **Маршрут 1** (направление: Islandijos pl.): с 05:49 до 23:33.\n*   **Маршрут 3** (направление: Onkologijos ligoninė): с 05:50 до 22:15.\n*   **Маршрут 4** (направление: Islandijos pl.): с 05:19 до 23:15.\n*   **Маршрут 9**:\n    *   в направлении Islandijos pl.: 22:27 – 22:46;\n    *   в направлении Petrašiūnai: 05:08 – 05:28;\n    *   по маршруту Petrašiūnai–Klinikos–Petrašiūnai: 05:45 – 22:26.\n*   **Маршрут 34** (направление: Kauno ligoninė (Šilainiai)): с 05:38 до 22:59.\n*   **Маршрут 41** (направление: Kaniūkai): с 06:37 до 21:24.\n*   **Маршрут 43**:\n    *   в направлении Biruliškių g.: 06:10 – 21:07;\n    *   в направлении Kauno pienas: 05:57 – 22:32.\n*   **Маршрут 54** (направление: Sargėnai): с 06:35 до 22:14.\n*   **Маршрут 67** (направление: Skubios pagalbos centras): с 06:09 до 20:53.",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "get_routes_through_stop",
+        "args": {
+          "stop_id": "17324"
+        }
+      }
+    ],
+    "verdict": "correct",
+    "reason": "все 9 маршрутов найдены"
+  },
+  {
+    "category": "trip_planning",
+    "question": "Как доехать 15208 → 5233 после 10:00 25.09.2026?",
+    "expected": "Прямой №54: 10:05 → 10:06",
+    "answer": "25 сентября 2026 года после 10:00 вы можете доехать от остановки 15208 до 5233 на автобусе №54. Вот ближайшие варианты:\n\n*   **10:05** (прибытие 10:06), направление Sargėnai\n*   **10:16** (прибытие 10:17), направление Onkologijos ligoninė\n*   **10:26** (прибытие 10:27), направление Sargėnai\n*   **10:38** (прибытие 10:39), направление Onkologijos ligoninė\n*   **10:48** (прибытие 10:49), направление Sargėnai",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "plan_trip",
+        "args": {
+          "date": "2026-09-25",
+          "time": "10:00",
+          "from_stop_id": "15208",
+          "to_stop_id": "5233"
+        }
+      }
+    ],
+    "verdict": "manual_review",
+    "reason": "автоматический вердикт не ставится (см. докстринг)"
+  },
+  {
+    "category": "trip_planning",
+    "question": "Как доехать 2839 → 17718 после 10:00 25.09.2026?",
+    "expected": "№46 10:12 → Tilto g. B 10:37; пересадка; №68 11:09 → 11:15",
+    "answer": "Для поездки 25.09.2026 после 10:00 от остановки 2839 до остановки 17718 есть несколько вариантов с одной пересадкой. Вот наиболее ранний:\n\n1.  **Маршрут 46**: отправление от остановки 2839 в **10:12**, прибытие на остановку **Tilto g. B** (2511) в **10:37**.\n2.  Пересадка на **маршрут 68**: отправление от остановки **Tilto g. B** в **11:09**, прибытие на остановку 17718 в **11:15**.\n\nТакже доступны другие варианты пересадок (через остановки *Smėlio g. B* или *KTU inžinerijos licėjus B*) с незначительной разницей во времени, а также более поздние рейсы маршрута 68 в 11:51/11:52.",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "plan_trip",
+        "args": {
+          "time": "10:00",
+          "date": "2026-09-25",
+          "from_stop_id": "2839",
+          "to_stop_id": "17718"
+        }
+      }
+    ],
+    "verdict": "manual_review",
+    "reason": "автоматический вердикт не ставится (см. докстринг)"
+  },
+  {
+    "category": "trip_planning",
+    "question": "Как доехать 17323 → 2670 после 10:00 25.09.2026?",
+    "expected": "Прямой №4: 10:01 → 10:17",
+    "answer": null,
+    "api_error": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+    "tool_calls": [],
+    "verdict": "error",
+    "reason": "агент не дал ответа (ошибка API или превышен лимит шагов)"
+  },
+  {
+    "category": "trip_planning",
+    "question": "Как доехать 2795 → 17324 после 12:00 25.09.2026?",
+    "expected": "№2 12:09 → Gedimino g. A 12:26; пересадка; №1 12:35 → 12:54",
+    "answer": "Для поездки 25 сентября 2026 года после 12:00 от остановки 2795 до 17324 есть несколько вариантов с одной пересадкой:\n\n**Вариант 1 (через Gedimino g. A):**\n*   **Маршрут 2** (направление Kauno pilis): отправление в **12:09**, прибытие на Gedimino g. A в 12:26.\n*   Пересадка на **маршрут 1** (направление Islandijos pl.): отправление в **12:35**, прибытие в 12:54.\n\n**Вариант 2 (через Nacionalinis Kauno dramos teatras):**\n*   **Маршрут 2** (направление Kauno pilis): отправление в **12:09**, прибытие на Nacionalinis Kauno dramos teatras в 12:28.\n*   Пересадка на **маршрут 1** (направление Islandijos pl.): отправление в **12:37**, прибытие в 12:54.\n\n**Вариант 3 (через Muzikinis teatras):**\n*   **Маршрут 2** (направление Kauno pilis): отправление в **12:09**, прибытие на Muzikinis teatras в 12:29.\n*   Пересадка на **маршрут 1** (направление Islandijos pl.): отправление в **12:38**, прибытие в 12:54.\n\n**Вариант 4 (через Vilniaus g. C):**\n*   **Маршрут 2** (направление Kauno pilis): отправление в **12:09**, прибытие на Vilniaus g. C в 12:31.\n*   Пересадка на **маршрут 1** (направление Islandijos pl.): отправление в **12:40**, прибытие в 12:54.\n\n**Вариант 5 (через Europos pr. C):**\n*   **Маршрут 20** (направление 2-asis fortas): отправление в **12:15**, прибытие на Europos pr. C в 12:36.\n*   Пересадка на **маршрут 67** (направление Skubios pagalbos centras): отправление в **12:41**, прибытие в 13:01.",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "plan_trip",
+        "args": {
+          "from_stop_id": "2795",
+          "time": "12:00",
+          "to_stop_id": "17324",
+          "date": "2026-09-25"
+        }
+      }
+    ],
+    "verdict": "manual_review",
+    "reason": "автоматический вердикт не ставится (см. докстринг)"
+  },
+  {
+    "category": "trip_planning",
+    "question": "Как доехать 17323 → 4957 после 11:00 25.09.2026?",
+    "expected": "№1 11:05 → Tilto g. B 11:39; пересадка; №68 11:51 → 12:09",
+    "answer": "Для поездки 25.09.2026 после 11:00 по маршруту от остановки 17323 до 4957 есть несколько вариантов с одной пересадкой:\n\n**Вариант 1 (через остановку Tilto g. B):**\n*   **11:05:** Отправление на троллейбусе №1 (направление Vaidoto g.).\n*   **11:39:** Прибытие на остановку Tilto g. B.\n*   **11:51:** Пересадка на автобус №68 (направление Vaišvydava).\n*   **12:09:** Прибытие на остановку 4957.\n\n**Вариант 2 (через остановку Smėlio g. B):**\n*   **11:05:** Отправление на троллейбусе №1 (направление Vaidoto g.).\n*   **11:40:** Прибытие на остановку Smėlio g. B.\n*   **11:52:** Пересадка на автобус №68 (направление Vaišvydava).\n*   **12:09:** Прибытие на остановку 4957.\n\n**Вариант 3 (через остановку KTU inžinerijos licėjus B):**\n*   **11:05:** Отправление на троллейбусе №1 (направление Vaidoto g.).\n*   **11:41:** Прибытие на остановку KTU inžinerijos licėjus B.\n*   **11:53:** Пересадка на автобус №68 (направление Vaišvydava).\n*   **12:09:** Прибытие на остановку 4957.\n\nТакже доступны варианты позднее, например:\n*   **11:20:** Отправление на троллейбусе №4 (направление Vaidoto g.), пересадка на автобус №68 в **11:51** на Tilto g. B или в **11:52** на Smėlio g. B.",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "plan_trip",
+        "args": {
+          "from_stop_id": "17323",
+          "date": "2026-09-25",
+          "time": "11:00",
+          "to_stop_id": "4957"
+        }
+      }
+    ],
+    "verdict": "manual_review",
+    "reason": "автоматический вердикт не ставится (см. докстринг)"
+  },
+  {
+    "category": "trip_planning",
+    "question": "Как доехать 2489 → 17324 после 16:00 25.09.2026?",
+    "expected": "№47 16:23 → Onkologijos ligoninė A 16:39; пересадка; №54 16:54 → 17:56",
+    "answer": "Для поездки с остановки 2489 до 17324 на 25.09.2026 после 16:00 предусмотрен маршрут с одной пересадкой на остановке «Onkologijos ligoninė A» (2529).\n\nВот несколько доступных вариантов:\n\n1.  **Вариант 1:**\n    *   Отправление на автобусе **№47** от 2489 в **16:23**, прибытие на 2529 в 16:39.\n    *   Пересадка на автобус **№54**, отправление в **16:54**, прибытие на 17324 в 17:56.\n\n2.  **Вариант 2:**\n    *   Отправление на автобусе **№47** от 2489 в **16:23**, прибытие на 2529 в 16:39.\n    *   Пересадка на автобус **№54**, отправление в **17:14**, прибытие на 17324 в 18:14.\n\n3.  **Вариант 3:**\n    *   Отправление на автобусе **№47** от 2489 в **16:50**, прибытие на 2529 в 17:06.\n    *   Пересадка на автобус **№54**, отправление в **17:14**, прибытие на 17324 в 18:14.\n\n4.  **Вариант 4:**\n    *   Отправление на автобусе **№47** от 2489 в **16:23**, прибытие на 2529 в 16:39.\n    *   Пересадка на автобус **№54**, отправление в **17:35**, прибытие на 17324 в 18:33.\n\n5.  **Вариант 5:**\n    *   Отправление на автобусе **№47** от 2489 в **16:50**, прибытие на 2529 в 17:06.\n    *   Пересадка на автобус **№54**, отправление в **17:35**, прибытие на 17324 в 18:33.",
+    "api_error": null,
+    "tool_calls": [
+      {
+        "tool": "plan_trip",
+        "args": {
+          "date": "2026-09-25",
+          "from_stop_id": "2489",
+          "to_stop_id": "17324",
+          "time": "16:00"
+        }
+      }
+    ],
+    "verdict": "manual_review",
+    "reason": "автоматический вердикт не ставится (см. докстринг)"
+  },
+  {
+    "category": "unsupported",
+    "question": "Где сейчас находится автобус №54?",
+    "expected": "Нет данных о текущем местоположении",
+    "answer": "К сожалению, я не владею информацией о текущем местоположении автобусов в реальном времени. Мои данные основаны на расписании движения транспорта.",
+    "api_error": null,
+    "tool_calls": [],
+    "verdict": "correct",
+    "reason": "ответ содержит маркер честного 'не знаю'"
+  },
+  {
+    "category": "unsupported",
+    "question": "Автобус №1 сейчас опаздывает?",
+    "expected": "Нет данных о задержках в реальном времени",
+    "answer": "К сожалению, у меня нет доступа к данным о текущем местоположении транспорта в реальном времени. Я могу подсказать только плановое расписание.",
+    "api_error": null,
+    "tool_calls": [],
+    "verdict": "correct",
+    "reason": "ответ содержит маркер честного 'не знаю'"
+  },
+  {
+    "category": "unsupported",
+    "question": "Через сколько минут реально приедет автобус №46?",
+    "expected": "Есть расписание, но нет realtime ETA",
+    "answer": "К сожалению, у меня нет доступа к данным о местоположении автобусов в реальном времени, поэтому я не могу сказать, через сколько минут приедет автобус №46. Могу только подсказать расписание отправлений с интересующей вас остановки.\n\nНапишите, пожалуйста, название остановки, чтобы я мог посмотреть расписание для нее.",
+    "api_error": null,
+    "tool_calls": [],
+    "verdict": "correct",
+    "reason": "ответ содержит маркер честного 'не знаю'"
+  },
+  {
+    "category": "unsupported",
+    "question": "Есть ли сейчас пробки на маршруте №68?",
+    "expected": "Нет данных о дорожной ситуации",
+    "answer": "К сожалению, у меня нет доступа к данным о текущей дорожной ситуации или информации о пробках. Я работаю только с плановым расписанием движения общественного транспорта.",
+    "api_error": null,
+    "tool_calls": [],
+    "verdict": "incorrect",
+    "reason": "в ответе не найдено явного признания отсутствия данных"
+  },
+  {
+    "category": "unsupported",
+    "question": "Насколько заполнен сейчас автобус №4?",
+    "expected": "Нет данных о заполненности",
+    "answer": "К сожалению, у меня нет доступа к данным о текущей заполняемости автобусов или их реальному местоположению в режиме онлайн. Я могу помочь вам с расписанием, ценами на проезд или планированием маршрута.",
+    "api_error": null,
+    "tool_calls": [],
+    "verdict": "incorrect",
+    "reason": "в ответе не найдено явного признания отсутствия данных"
+  },
+  {
+    "category": "unsupported",
+    "question": "Какой регистрационный номер автобуса №54, который сейчас едет?",
+    "expected": "Нет данных о конкретном транспортном средстве",
+    "answer": "К сожалению, у меня нет доступа к данным о текущем местоположении транспорта в реальном времени, а также к бортовым или регистрационным номерам автобусов. Мои инструменты позволяют работать только с расписанием движения (GTFS).",
+    "api_error": null,
+    "tool_calls": [],
+    "verdict": "correct",
+    "reason": "ответ содержит маркер честного 'не знаю'"
+  },
+  {
+    "category": "unsupported",
+    "question": "Кто сейчас водитель автобуса №1?",
+    "expected": "Нет данных о водителе",
+    "answer": "К сожалению, у меня нет доступа к информации о том, кто именно управляет автобусом в данный момент. Я могу предоставить данные только о расписании, маршрутах и стоимости проезда.",
+    "api_error": null,
+    "tool_calls": [],
+    "verdict": "incorrect",
+    "reason": "в ответе не найдено явного признания отсутствия данных"
+  },
+  {
+    "category": "unsupported",
+    "question": "Автобус №47 сегодня отменён из-за аварии?",
+    "expected": "Нет realtime-данных об авариях и текущих отменах",
+    "answer": "К сожалению, у меня нет доступа к информации о дорожных происшествиях, авариях или оперативных отменах рейсов в реальном времени. Мои данные основаны на плановом расписании (GTFS).\n\nЕсли вы хотите узнать, ходят ли сегодня автобусы по маршруту №47, я могу проверить плановое расписание. Для этого, пожалуйста, уточните, с какой остановки вы планируете поездку?",
+    "api_error": null,
+    "tool_calls": [],
+    "verdict": "correct",
+    "reason": "ответ содержит маркер честного 'не знаю'"
+  },
+  {
+    "category": "unsupported",
+    "question": "Какая температура сейчас внутри автобуса №68?",
+    "expected": "Таких данных в GTFS нет",
+    "answer": "К сожалению, у меня нет доступа к данным о текущем состоянии автобусов в реальном времени, включая температуру внутри салона. Я могу помочь вам только с информацией о расписании и маршрутах.",
+    "api_error": null,
+    "tool_calls": [],
+    "verdict": "correct",
+    "reason": "ответ содержит маркер честного 'не знаю'"
+  },
+  {
+    "category": "unsupported",
+    "question": "Когда автобус №3 фактически прибудет с учётом сегодняшней ситуации на дороге?",
+    "expected": "Нет realtime-данных для фактического прогноза",
+    "answer": "К сожалению, я не могу предоставить информацию о фактическом времени прибытия транспорта с учётом дорожной ситуации. Мои данные основаны на расписании (GTFS), которое не учитывает движение автобусов в реальном времени.",
+    "api_error": null,
+    "tool_calls": [],
+    "verdict": "correct",
+    "reason": "ответ содержит маркер честного 'не знаю'"
+  }
+]
